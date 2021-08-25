@@ -49,7 +49,7 @@ namespace ConsoleApp1
                 }
 
                 if (cont <= 2) {
-                Console.WriteLine(i);
+                    Console.WriteLine(i);
                 }
                 cont = 0;
             }
