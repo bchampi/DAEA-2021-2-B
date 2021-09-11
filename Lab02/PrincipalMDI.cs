@@ -24,7 +24,9 @@ namespace Lab02
 
         private void menuSistemaSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            frmLogin formLogin = new frmLogin();
+            formLogin.Show();
         }
 
         private void menuManUsuarios_Click(object sender, EventArgs e)

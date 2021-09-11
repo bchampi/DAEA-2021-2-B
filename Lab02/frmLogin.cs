@@ -24,15 +24,24 @@ namespace Lab02
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            PrincipalMDI principal = new PrincipalMDI();
-            principal.Show();
-            this.Hide();
+            string[] credentials = { "admin", "admin"};
+            if (credentials[0] == textUser.Text && credentials[1] == textPassword.Text)
+            {
+                labelError.Visible = true;
 
+                PrincipalMDI principal = new PrincipalMDI();
+                principal.Show();
+                this.Hide();
+            } else
+            {
+                labelError.Visible = true;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // this.Close();
+            Application.Exit();
         }
     }
 }
