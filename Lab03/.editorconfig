@@ -1,0 +1,7 @@
+﻿[*.{cs,vb}]
+
+# IDE0003: Quitar cualificación
+dotnet_style_qualification_for_event = false
+
+# CS1717: Se ha asignado a la misma variable
+dotnet_diagnostic.CS1717.severity = none
