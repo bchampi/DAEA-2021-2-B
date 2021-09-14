@@ -49,6 +49,7 @@ namespace Lab03
                 conn.Open();
                 MessageBox.Show("Conectado satisfactoriamente");
                 btnDisconnect.Enabled = true;
+                btnSignIn.Enabled = true;
                 btnPerson.Enabled = true;
             }
             catch (Exception ex)
@@ -82,6 +83,7 @@ namespace Lab03
                     conn.Close();
                     MessageBox.Show("Conexión cerrada satisfactoriamente");
                     btnDisconnect.Enabled = false;
+                    btnSignIn.Enabled = false;
                     btnPerson.Enabled = false;
                 }
 
@@ -110,6 +112,12 @@ namespace Lab03
         {
             frmPerson formPerson = new frmPerson(conn);
             formPerson.Show();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            frmLogin formLogin = new frmLogin(conn);
+            formLogin.Show();
         }
     }
 }

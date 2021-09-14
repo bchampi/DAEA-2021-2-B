@@ -34,7 +34,6 @@ namespace Lab03
             this.btnConnect = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.textUser = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textDB = new System.Windows.Forms.TextBox();
@@ -43,6 +42,7 @@ namespace Lab03
             this.btnState = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
             this.btnPerson = new System.Windows.Forms.Button();
+            this.btnSignIn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -70,9 +70,8 @@ namespace Lab03
             this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnConnect.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.Location = new System.Drawing.Point(29, 212);
-            this.btnConnect.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(108, 44);
+            this.btnConnect.Size = new System.Drawing.Size(114, 44);
             this.btnConnect.TabIndex = 2;
             this.btnConnect.Text = "Conectar";
             this.btnConnect.UseVisualStyleBackColor = true;
@@ -98,16 +97,6 @@ namespace Lab03
             this.label3.Size = new System.Drawing.Size(118, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "Base de Datos";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label4.Location = new System.Drawing.Point(355, 306);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 23);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Contraseña";
             // 
             // textUser
             // 
@@ -173,9 +162,10 @@ namespace Lab03
             // 
             this.btnState.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnState.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnState.Location = new System.Drawing.Point(143, 212);
+            this.btnState.Location = new System.Drawing.Point(154, 212);
+            this.btnState.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
             this.btnState.Name = "btnState";
-            this.btnState.Size = new System.Drawing.Size(108, 44);
+            this.btnState.Size = new System.Drawing.Size(114, 44);
             this.btnState.TabIndex = 13;
             this.btnState.Text = "Estado";
             this.btnState.UseVisualStyleBackColor = true;
@@ -186,9 +176,11 @@ namespace Lab03
             this.btnDisconnect.Enabled = false;
             this.btnDisconnect.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnDisconnect.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisconnect.Location = new System.Drawing.Point(257, 212);
+            this.btnDisconnect.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnDisconnect.Location = new System.Drawing.Point(29, 267);
+            this.btnDisconnect.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.btnDisconnect.Name = "btnDisconnect";
-            this.btnDisconnect.Size = new System.Drawing.Size(152, 44);
+            this.btnDisconnect.Size = new System.Drawing.Size(239, 44);
             this.btnDisconnect.TabIndex = 14;
             this.btnDisconnect.Text = "Desconectar";
             this.btnDisconnect.UseVisualStyleBackColor = true;
@@ -200,21 +192,37 @@ namespace Lab03
             this.btnPerson.Enabled = false;
             this.btnPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPerson.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPerson.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnPerson.Location = new System.Drawing.Point(445, 212);
-            this.btnPerson.Margin = new System.Windows.Forms.Padding(20, 3, 10, 3);
+            this.btnPerson.ForeColor = System.Drawing.Color.Orange;
+            this.btnPerson.Location = new System.Drawing.Point(314, 267);
+            this.btnPerson.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
             this.btnPerson.Name = "btnPerson";
-            this.btnPerson.Size = new System.Drawing.Size(108, 44);
+            this.btnPerson.Size = new System.Drawing.Size(239, 44);
             this.btnPerson.TabIndex = 15;
             this.btnPerson.Text = "Personas";
             this.btnPerson.UseVisualStyleBackColor = false;
             this.btnPerson.Click += new System.EventHandler(this.btnPerson_Click);
             // 
+            // btnSignIn
+            // 
+            this.btnSignIn.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSignIn.Enabled = false;
+            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignIn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnSignIn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSignIn.Location = new System.Drawing.Point(314, 212);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(239, 44);
+            this.btnSignIn.TabIndex = 16;
+            this.btnSignIn.Text = "Login";
+            this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // dbConn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(582, 288);
+            this.ClientSize = new System.Drawing.Size(582, 343);
+            this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.btnPerson);
             this.Controls.Add(this.btnDisconnect);
             this.Controls.Add(this.btnState);
@@ -223,7 +231,6 @@ namespace Lab03
             this.Controls.Add(this.textDB);
             this.Controls.Add(this.textUser);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnConnect);
@@ -244,7 +251,6 @@ namespace Lab03
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textUser;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textDB;
@@ -253,6 +259,7 @@ namespace Lab03
         private System.Windows.Forms.Button btnState;
         private System.Windows.Forms.Button btnDisconnect;
         private System.Windows.Forms.Button btnPerson;
+        private System.Windows.Forms.Button btnSignIn;
     }
 }
 
