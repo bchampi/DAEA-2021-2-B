@@ -130,7 +130,7 @@ namespace Lab03
             this.textDB.Name = "textDB";
             this.textDB.Size = new System.Drawing.Size(239, 30);
             this.textDB.TabIndex = 9;
-            this.textDB.Text = "db_lab03";
+            this.textDB.Text = "School";
             // 
             // textPassword
             // 

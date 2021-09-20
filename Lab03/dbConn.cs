@@ -47,14 +47,14 @@ namespace Lab03
             {
                 conn = new SqlConnection(str);
                 conn.Open();
-                MessageBox.Show("Conectado satisfactoriamente");
+                MessageBox.Show("Conectado satisfactoriamente", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnDisconnect.Enabled = true;
                 btnSignIn.Enabled = true;
                 btnPerson.Enabled = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectar al servidor:\n" + ex.ToString());
+                MessageBox.Show("Error al conectar al servidor:\n" + ex.ToString(), "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -64,13 +64,13 @@ namespace Lab03
             {
                 if (conn.State == ConnectionState.Open)
                     MessageBox.Show("Estado del servidor: " + conn.State + "\nVersión del servidor: " + conn.ServerVersion +
-                        "\nBase de datos: " + conn.Database);
+                        "\nBase de datos: " + conn.Database, "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
-                    MessageBox.Show("Estado del servidor: " + conn.State);
+                    MessageBox.Show("Estado del servidor:" + conn.State, "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Imposible determinar el estado del servidor:\n" + ex.ToString());
+                MessageBox.Show("Imposible determinar el estado del servidor:\n" + ex.ToString(), "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -81,7 +81,7 @@ namespace Lab03
                 if (conn.State != ConnectionState.Closed)
                 {
                     conn.Close();
-                    MessageBox.Show("Conexión cerrada satisfactoriamente");
+                    MessageBox.Show("Conexión cerrada satisfactoriamente", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnDisconnect.Enabled = false;
                     btnSignIn.Enabled = false;
                     btnPerson.Enabled = false;
@@ -90,7 +90,7 @@ namespace Lab03
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrió un error al cerrar la conexión:\n" + ex.ToString());
+                MessageBox.Show("Ocurrió un error al cerrar la conexión:\n" + ex.ToString(), "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
