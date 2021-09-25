@@ -51,6 +51,7 @@ namespace Lab03
                 btnDisconnect.Enabled = true;
                 btnSignIn.Enabled = true;
                 btnPerson.Enabled = true;
+                btnCourse.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -85,6 +86,7 @@ namespace Lab03
                     btnDisconnect.Enabled = false;
                     btnSignIn.Enabled = false;
                     btnPerson.Enabled = false;
+                    btnCourse.Enabled = false;
                 }
 
             }
@@ -118,6 +120,12 @@ namespace Lab03
         {
             frmLogin formLogin = new frmLogin(conn);
             formLogin.Show();
+        }
+
+        private void btnCourse_Click(object sender, EventArgs e)
+        {
+            frmCourse formCourse = new frmCourse(conn);
+            formCourse.Show();
         }
     }
 }

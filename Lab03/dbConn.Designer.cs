@@ -43,6 +43,7 @@ namespace Lab03
             this.btnDisconnect = new System.Windows.Forms.Button();
             this.btnPerson = new System.Windows.Forms.Button();
             this.btnSignIn = new System.Windows.Forms.Button();
+            this.btnCourse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -193,7 +194,7 @@ namespace Lab03
             this.btnPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPerson.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPerson.ForeColor = System.Drawing.Color.Orange;
-            this.btnPerson.Location = new System.Drawing.Point(314, 267);
+            this.btnPerson.Location = new System.Drawing.Point(29, 329);
             this.btnPerson.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
             this.btnPerson.Name = "btnPerson";
             this.btnPerson.Size = new System.Drawing.Size(239, 44);
@@ -211,17 +212,34 @@ namespace Lab03
             this.btnSignIn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnSignIn.Location = new System.Drawing.Point(314, 212);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(239, 44);
+            this.btnSignIn.Size = new System.Drawing.Size(239, 99);
             this.btnSignIn.TabIndex = 16;
             this.btnSignIn.Text = "Login";
             this.btnSignIn.UseVisualStyleBackColor = false;
             this.btnSignIn.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // btnCourse
+            // 
+            this.btnCourse.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCourse.Enabled = false;
+            this.btnCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCourse.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCourse.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCourse.Location = new System.Drawing.Point(314, 329);
+            this.btnCourse.Margin = new System.Windows.Forms.Padding(8, 3, 3, 3);
+            this.btnCourse.Name = "btnCourse";
+            this.btnCourse.Size = new System.Drawing.Size(239, 44);
+            this.btnCourse.TabIndex = 17;
+            this.btnCourse.Text = "Cursos";
+            this.btnCourse.UseVisualStyleBackColor = false;
+            this.btnCourse.Click += new System.EventHandler(this.btnCourse_Click);
+            // 
             // dbConn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(582, 343);
+            this.ClientSize = new System.Drawing.Size(582, 397);
+            this.Controls.Add(this.btnCourse);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.btnPerson);
             this.Controls.Add(this.btnDisconnect);
@@ -260,6 +278,7 @@ namespace Lab03
         private System.Windows.Forms.Button btnDisconnect;
         private System.Windows.Forms.Button btnPerson;
         private System.Windows.Forms.Button btnSignIn;
+        private System.Windows.Forms.Button btnCourse;
     }
 }
 
