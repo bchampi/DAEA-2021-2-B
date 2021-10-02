@@ -123,5 +123,36 @@ namespace Lab05
                 dtpEnrollment.Text = dgvListPerson.SelectedRows[0].Cells[4].Value.ToString();
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string search = "SearchPersonInGeneral";
+            SqlCommand cmd = new SqlCommand(search, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            string input = "";
+            if (textPersonId.Text != "") input = textPersonId.Text;
+            if (textLastName.Text != "") input = textLastName.Text;
+            if (textFirstName.Text != "") input = textFirstName.Text;
+
+            SqlParameter param = new SqlParameter();
+            param.ParameterName = "@input";
+            param.SqlDbType = SqlDbType.NVarChar;
+            param.Value = input;
+
+            cmd.Parameters.Add(param);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+
+            dgvListPerson.DataSource = dt;
+            dgvListPerson.Refresh();
+            textPersonId.Text = "";
+            textLastName.Text = "";
+            textFirstName.Text = "";
+            conn.Close();
+        }
     }
 }
