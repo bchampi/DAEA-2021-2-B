@@ -46,6 +46,8 @@ namespace Lab06
             this.label2 = new System.Windows.Forms.Label();
             this.textPersonId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSortByLastName = new System.Windows.Forms.Button();
+            this.btnSearchById = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListPerson)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,13 +55,14 @@ namespace Lab06
             // dgvListPerson
             // 
             this.dgvListPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListPerson.Location = new System.Drawing.Point(19, 279);
+            this.dgvListPerson.Location = new System.Drawing.Point(19, 328);
             this.dgvListPerson.Margin = new System.Windows.Forms.Padding(10);
             this.dgvListPerson.Name = "dgvListPerson";
             this.dgvListPerson.RowHeadersWidth = 51;
             this.dgvListPerson.RowTemplate.Height = 24;
             this.dgvListPerson.Size = new System.Drawing.Size(574, 236);
             this.dgvListPerson.TabIndex = 13;
+            this.dgvListPerson.SelectionChanged += new System.EventHandler(this.dgvListPerson_SelectionChanged);
             // 
             // btnDelete
             // 
@@ -162,6 +165,7 @@ namespace Lab06
             this.dtpEnrollment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEnrollment.Location = new System.Drawing.Point(242, 190);
             this.dtpEnrollment.Name = "dtpEnrollment";
+            this.dtpEnrollment.ShowCheckBox = true;
             this.dtpEnrollment.Size = new System.Drawing.Size(185, 26);
             this.dtpEnrollment.TabIndex = 9;
             // 
@@ -171,6 +175,7 @@ namespace Lab06
             this.dtpHire.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHire.Location = new System.Drawing.Point(12, 190);
             this.dtpHire.Name = "dtpHire";
+            this.dtpHire.ShowCheckBox = true;
             this.dtpHire.Size = new System.Drawing.Size(181, 26);
             this.dtpHire.TabIndex = 8;
             // 
@@ -254,11 +259,43 @@ namespace Lab06
             this.label1.TabIndex = 0;
             this.label1.Text = "Código";
             // 
+            // btnSortByLastName
+            // 
+            this.btnSortByLastName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSortByLastName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSortByLastName.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
+            this.btnSortByLastName.ForeColor = System.Drawing.Color.OliveDrab;
+            this.btnSortByLastName.Location = new System.Drawing.Point(19, 276);
+            this.btnSortByLastName.Margin = new System.Windows.Forms.Padding(10, 27, 10, 8);
+            this.btnSortByLastName.Name = "btnSortByLastName";
+            this.btnSortByLastName.Size = new System.Drawing.Size(226, 34);
+            this.btnSortByLastName.TabIndex = 14;
+            this.btnSortByLastName.Text = "Ordenar por Apellido";
+            this.btnSortByLastName.UseVisualStyleBackColor = false;
+            this.btnSortByLastName.Click += new System.EventHandler(this.btnSortByLastName_Click);
+            // 
+            // btnSearchById
+            // 
+            this.btnSearchById.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSearchById.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchById.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
+            this.btnSearchById.ForeColor = System.Drawing.Color.OliveDrab;
+            this.btnSearchById.Location = new System.Drawing.Point(265, 276);
+            this.btnSearchById.Margin = new System.Windows.Forms.Padding(10, 27, 10, 8);
+            this.btnSearchById.Name = "btnSearchById";
+            this.btnSearchById.Size = new System.Drawing.Size(165, 34);
+            this.btnSearchById.TabIndex = 15;
+            this.btnSearchById.Text = "Buscar por ID";
+            this.btnSearchById.UseVisualStyleBackColor = false;
+            this.btnSearchById.Click += new System.EventHandler(this.btnSortById_Click);
+            // 
             // manPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(612, 553);
+            this.ClientSize = new System.Drawing.Size(612, 583);
+            this.Controls.Add(this.btnSearchById);
+            this.Controls.Add(this.btnSortByLastName);
             this.Controls.Add(this.dgvListPerson);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -295,6 +332,8 @@ namespace Lab06
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textPersonId;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSortByLastName;
+        private System.Windows.Forms.Button btnSearchById;
     }
 }
 

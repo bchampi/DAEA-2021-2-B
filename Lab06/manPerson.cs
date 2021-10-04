@@ -105,5 +105,41 @@ namespace Lab06
 
             adapter.Update(tablePerson);
         }
+
+        private void btnSortByLastName_Click(object sender, EventArgs e)
+        {
+            DataView dv = new DataView(tablePerson);
+            dv.Sort = "LastName ASC";
+            dgvListPerson.DataSource = dv;
+        }
+
+        private void btnSortById_Click(object sender, EventArgs e)
+        {
+            DataView dv = new DataView(tablePerson);
+            dv.RowFilter = "PersonID = '" + textPersonId.Text + "'";
+            dgvListPerson.DataSource = dv;
+        }
+
+        private void dgvListPerson_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvListPerson.SelectedRows.Count > 0)
+            {
+                textPersonId.Text = dgvListPerson.SelectedRows[0].Cells[0].Value.ToString();
+                textLastName.Text = dgvListPerson.SelectedRows[0].Cells[1].Value.ToString();
+                textFirstName.Text = dgvListPerson.SelectedRows[0].Cells[2].Value.ToString();
+
+                string hireDate = dgvListPerson.SelectedRows[0].Cells[3].Value.ToString();
+                if (String.IsNullOrEmpty(hireDate))
+                    dtpHire.Checked = false;
+                else
+                    dtpHire.Text = hireDate;
+                
+                string enrollmentDate= dgvListPerson.SelectedRows[0].Cells[4].Value.ToString();
+                if (String.IsNullOrEmpty(enrollmentDate))
+                    dtpEnrollment.Checked = false;
+                else
+                    dtpEnrollment.Text = enrollmentDate;
+            }
+        }
     }
 }
