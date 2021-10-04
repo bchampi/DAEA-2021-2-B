@@ -1,7 +1,7 @@
 ﻿
-namespace Lab05
+namespace Lab06
 {
-    partial class frmPerson
+    partial class manPerson
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,6 +29,12 @@ namespace Lab05
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvListPerson = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnList = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpEnrollment = new System.Windows.Forms.DateTimePicker();
             this.dtpHire = new System.Windows.Forms.DateTimePicker();
@@ -40,15 +46,90 @@ namespace Lab05
             this.label2 = new System.Windows.Forms.Label();
             this.textPersonId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnList = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.dgvListPerson = new System.Windows.Forms.DataGridView();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListPerson)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dgvListPerson
+            // 
+            this.dgvListPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListPerson.Location = new System.Drawing.Point(19, 279);
+            this.dgvListPerson.Margin = new System.Windows.Forms.Padding(10);
+            this.dgvListPerson.Name = "dgvListPerson";
+            this.dgvListPerson.RowHeadersWidth = 51;
+            this.dgvListPerson.RowTemplate.Height = 24;
+            this.dgvListPerson.Size = new System.Drawing.Size(574, 236);
+            this.dgvListPerson.TabIndex = 13;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnDelete.Location = new System.Drawing.Point(477, 216);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(116, 34);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnUpdate.Location = new System.Drawing.Point(477, 171);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(116, 34);
+            this.btnUpdate.TabIndex = 11;
+            this.btnUpdate.Text = "Modificar";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAdd.Location = new System.Drawing.Point(477, 126);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(116, 34);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "Insertar";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSearch.Location = new System.Drawing.Point(477, 81);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(116, 34);
+            this.btnSearch.TabIndex = 9;
+            this.btnSearch.Text = "Buscar";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // btnList
+            // 
+            this.btnList.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnList.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
+            this.btnList.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnList.Location = new System.Drawing.Point(477, 36);
+            this.btnList.Margin = new System.Windows.Forms.Padding(10, 27, 10, 8);
+            this.btnList.Name = "btnList";
+            this.btnList.Size = new System.Drawing.Size(116, 34);
+            this.btnList.TabIndex = 8;
+            this.btnList.Text = "Listar";
+            this.btnList.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -67,7 +148,7 @@ namespace Lab05
             this.groupBox1.Margin = new System.Windows.Forms.Padding(10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(438, 240);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Persona";
             // 
@@ -149,7 +230,6 @@ namespace Lab05
             this.label2.Size = new System.Drawing.Size(63, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textPersonId
             // 
@@ -170,94 +250,7 @@ namespace Lab05
             this.label1.TabIndex = 0;
             this.label1.Text = "Código";
             // 
-            // btnList
-            // 
-            this.btnList.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnList.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
-            this.btnList.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnList.Location = new System.Drawing.Point(477, 36);
-            this.btnList.Margin = new System.Windows.Forms.Padding(10, 27, 10, 8);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(116, 34);
-            this.btnList.TabIndex = 1;
-            this.btnList.Text = "Listar";
-            this.btnList.UseVisualStyleBackColor = false;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
-            this.btnSearch.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSearch.Location = new System.Drawing.Point(477, 81);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(116, 34);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Buscar";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAdd.Location = new System.Drawing.Point(477, 126);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(116, 34);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Insertar";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnUpdate.Location = new System.Drawing.Point(477, 171);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(116, 34);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Modificar";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnDelete.Location = new System.Drawing.Point(477, 216);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(116, 34);
-            this.btnDelete.TabIndex = 5;
-            this.btnDelete.Text = "Eliminar";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // dgvListPerson
-            // 
-            this.dgvListPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListPerson.Location = new System.Drawing.Point(19, 279);
-            this.dgvListPerson.Margin = new System.Windows.Forms.Padding(10);
-            this.dgvListPerson.Name = "dgvListPerson";
-            this.dgvListPerson.RowHeadersWidth = 51;
-            this.dgvListPerson.RowTemplate.Height = 24;
-            this.dgvListPerson.Size = new System.Drawing.Size(574, 236);
-            this.dgvListPerson.TabIndex = 6;
-            this.dgvListPerson.SelectionChanged += new System.EventHandler(this.dgvListPerson_SelectionChanged);
-            // 
-            // frmPerson
+            // manPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -269,36 +262,34 @@ namespace Lab05
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmPerson";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mantenimiento de Personas";
-            this.Load += new System.EventHandler(this.frmPerson_Load);
+            this.Name = "manPerson";
+            this.Text = "Mantenimiento Personas";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListPerson)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListPerson)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnList;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridView dgvListPerson;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.TextBox textPersonId;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnList;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker dtpEnrollment;
+        private System.Windows.Forms.DateTimePicker dtpHire;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textLastName;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textFirstName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textLastName;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpHire;
-        private System.Windows.Forms.DateTimePicker dtpEnrollment;
-        private System.Windows.Forms.DataGridView dgvListPerson;
+        private System.Windows.Forms.TextBox textPersonId;
+        private System.Windows.Forms.Label label1;
     }
 }
 

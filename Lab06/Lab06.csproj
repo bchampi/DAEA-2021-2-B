@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1FB50B0D-49F7-49BB-8F2C-8D936B539391}</ProjectGuid>
+    <ProjectGuid>{5B2A5056-E204-4418-88A7-3E13986BFA86}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Lab05</RootNamespace>
-    <AssemblyName>Lab05</AssemblyName>
+    <RootNamespace>Lab06</RootNamespace>
+    <AssemblyName>Lab06</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmPerson.cs">
+    <Compile Include="manPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPerson.Designer.cs">
-      <DependentUpon>frmPerson.cs</DependentUpon>
+    <Compile Include="manPerson.Designer.cs">
+      <DependentUpon>manPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmPerson.resx">
-      <DependentUpon>frmPerson.cs</DependentUpon>
+    <EmbeddedResource Include="manPerson.resx">
+      <DependentUpon>manPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
