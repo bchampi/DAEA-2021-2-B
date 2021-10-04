@@ -74,6 +74,7 @@ namespace Lab06
             this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -88,6 +89,7 @@ namespace Lab06
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "Modificar";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -102,6 +104,7 @@ namespace Lab06
             this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Insertar";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSearch
             // 
@@ -130,6 +133,7 @@ namespace Lab06
             this.btnList.TabIndex = 8;
             this.btnList.Text = "Listar";
             this.btnList.UseVisualStyleBackColor = false;
+            this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // groupBox1
             // 
@@ -264,6 +268,7 @@ namespace Lab06
             this.Controls.Add(this.groupBox1);
             this.Name = "manPerson";
             this.Text = "Mantenimiento Personas";
+            this.Load += new System.EventHandler(this.manPerson_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListPerson)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
