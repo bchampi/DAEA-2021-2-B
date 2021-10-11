@@ -120,6 +120,13 @@ namespace Lab06
             dgvListPerson.DataSource = dv;
         }
 
+        private void btnSearchByFirstName_Click(object sender, EventArgs e)
+        {
+            DataView dv = new DataView(tablePerson);
+            dv.RowFilter = "FirstName = '" + textFirstName.Text + "'";
+            dgvListPerson.DataSource = dv;
+        }
+
         private void dgvListPerson_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvListPerson.SelectedRows.Count > 0)

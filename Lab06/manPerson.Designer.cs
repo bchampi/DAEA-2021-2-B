@@ -48,6 +48,7 @@ namespace Lab06
             this.label1 = new System.Windows.Forms.Label();
             this.btnSortByLastName = new System.Windows.Forms.Button();
             this.btnSearchById = new System.Windows.Forms.Button();
+            this.btnSearchByFirstName = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListPerson)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,7 @@ namespace Lab06
             this.dgvListPerson.Name = "dgvListPerson";
             this.dgvListPerson.RowHeadersWidth = 51;
             this.dgvListPerson.RowTemplate.Height = 24;
-            this.dgvListPerson.Size = new System.Drawing.Size(574, 236);
+            this.dgvListPerson.Size = new System.Drawing.Size(594, 236);
             this.dgvListPerson.TabIndex = 13;
             this.dgvListPerson.SelectionChanged += new System.EventHandler(this.dgvListPerson_SelectionChanged);
             // 
@@ -70,7 +71,7 @@ namespace Lab06
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnDelete.Location = new System.Drawing.Point(477, 216);
+            this.btnDelete.Location = new System.Drawing.Point(497, 216);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(116, 34);
@@ -85,7 +86,7 @@ namespace Lab06
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnUpdate.Location = new System.Drawing.Point(477, 171);
+            this.btnUpdate.Location = new System.Drawing.Point(497, 171);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(116, 34);
@@ -100,7 +101,7 @@ namespace Lab06
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAdd.Location = new System.Drawing.Point(477, 126);
+            this.btnAdd.Location = new System.Drawing.Point(497, 126);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(116, 34);
@@ -115,7 +116,7 @@ namespace Lab06
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
             this.btnSearch.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSearch.Location = new System.Drawing.Point(477, 81);
+            this.btnSearch.Location = new System.Drawing.Point(497, 81);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 3, 10, 8);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 34);
@@ -129,7 +130,7 @@ namespace Lab06
             this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnList.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
             this.btnList.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnList.Location = new System.Drawing.Point(477, 36);
+            this.btnList.Location = new System.Drawing.Point(497, 36);
             this.btnList.Margin = new System.Windows.Forms.Padding(10, 27, 10, 8);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(116, 34);
@@ -154,7 +155,7 @@ namespace Lab06
             this.groupBox1.Location = new System.Drawing.Point(19, 19);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(438, 240);
+            this.groupBox1.Size = new System.Drawing.Size(458, 240);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Persona";
@@ -163,10 +164,10 @@ namespace Lab06
             // 
             this.dtpEnrollment.Font = new System.Drawing.Font("JetBrains Mono", 9F);
             this.dtpEnrollment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEnrollment.Location = new System.Drawing.Point(242, 190);
+            this.dtpEnrollment.Location = new System.Drawing.Point(264, 190);
             this.dtpEnrollment.Name = "dtpEnrollment";
             this.dtpEnrollment.ShowCheckBox = true;
-            this.dtpEnrollment.Size = new System.Drawing.Size(185, 26);
+            this.dtpEnrollment.Size = new System.Drawing.Size(181, 26);
             this.dtpEnrollment.TabIndex = 9;
             // 
             // dtpHire
@@ -183,7 +184,7 @@ namespace Lab06
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(238, 168);
+            this.label5.Location = new System.Drawing.Point(260, 168);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 15, 3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 19);
@@ -224,7 +225,7 @@ namespace Lab06
             // textFirstName
             // 
             this.textFirstName.Font = new System.Drawing.Font("JetBrains Mono", 9F);
-            this.textFirstName.Location = new System.Drawing.Point(242, 124);
+            this.textFirstName.Location = new System.Drawing.Point(264, 124);
             this.textFirstName.Name = "textFirstName";
             this.textFirstName.Size = new System.Drawing.Size(181, 26);
             this.textFirstName.TabIndex = 3;
@@ -233,7 +234,7 @@ namespace Lab06
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("JetBrains Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(238, 102);
+            this.label2.Location = new System.Drawing.Point(260, 102);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 15, 3, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 19);
@@ -266,7 +267,7 @@ namespace Lab06
             this.btnSortByLastName.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
             this.btnSortByLastName.ForeColor = System.Drawing.Color.OliveDrab;
             this.btnSortByLastName.Location = new System.Drawing.Point(19, 276);
-            this.btnSortByLastName.Margin = new System.Windows.Forms.Padding(10, 27, 10, 8);
+            this.btnSortByLastName.Margin = new System.Windows.Forms.Padding(10, 27, 5, 8);
             this.btnSortByLastName.Name = "btnSortByLastName";
             this.btnSortByLastName.Size = new System.Drawing.Size(226, 34);
             this.btnSortByLastName.TabIndex = 14;
@@ -280,20 +281,36 @@ namespace Lab06
             this.btnSearchById.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchById.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
             this.btnSearchById.ForeColor = System.Drawing.Color.OliveDrab;
-            this.btnSearchById.Location = new System.Drawing.Point(265, 276);
-            this.btnSearchById.Margin = new System.Windows.Forms.Padding(10, 27, 10, 8);
+            this.btnSearchById.Location = new System.Drawing.Point(255, 276);
+            this.btnSearchById.Margin = new System.Windows.Forms.Padding(5, 27, 5, 8);
             this.btnSearchById.Name = "btnSearchById";
-            this.btnSearchById.Size = new System.Drawing.Size(165, 34);
+            this.btnSearchById.Size = new System.Drawing.Size(152, 34);
             this.btnSearchById.TabIndex = 15;
             this.btnSearchById.Text = "Buscar por ID";
             this.btnSearchById.UseVisualStyleBackColor = false;
             this.btnSearchById.Click += new System.EventHandler(this.btnSortById_Click);
             // 
+            // btnSearchByFirstName
+            // 
+            this.btnSearchByFirstName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSearchByFirstName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchByFirstName.Font = new System.Drawing.Font("JetBrains Mono", 9.2F);
+            this.btnSearchByFirstName.ForeColor = System.Drawing.Color.OliveDrab;
+            this.btnSearchByFirstName.Location = new System.Drawing.Point(417, 276);
+            this.btnSearchByFirstName.Margin = new System.Windows.Forms.Padding(5, 27, 10, 8);
+            this.btnSearchByFirstName.Name = "btnSearchByFirstName";
+            this.btnSearchByFirstName.Size = new System.Drawing.Size(196, 34);
+            this.btnSearchByFirstName.TabIndex = 16;
+            this.btnSearchByFirstName.Text = "Buscar por Nombre";
+            this.btnSearchByFirstName.UseVisualStyleBackColor = false;
+            this.btnSearchByFirstName.Click += new System.EventHandler(this.btnSearchByFirstName_Click);
+            // 
             // manPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(612, 583);
+            this.ClientSize = new System.Drawing.Size(632, 583);
+            this.Controls.Add(this.btnSearchByFirstName);
             this.Controls.Add(this.btnSearchById);
             this.Controls.Add(this.btnSortByLastName);
             this.Controls.Add(this.dgvListPerson);
@@ -334,6 +351,7 @@ namespace Lab06
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSortByLastName;
         private System.Windows.Forms.Button btnSearchById;
+        private System.Windows.Forms.Button btnSearchByFirstName;
     }
 }
 
