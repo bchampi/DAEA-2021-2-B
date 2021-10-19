@@ -5,14 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Person</title>
+    <title>Registro de Personas</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.bundle.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="container">
-            <div class="row justify-content-center g-3 col-md-8 ms-auto me-auto mt-auto">
+            <div class="row justify-content-center g-3 col-md-8 ms-auto me-auto mt-3">
                 <div class="col-md-4">
                     <asp:Label ID="Label1" runat="server" Text="Nombre" AssociatedControlID="textFirstName" CssClass="mb-1"></asp:Label>
                     <asp:TextBox ID="textFirstName" runat="server" CssClass="form-control" AutoCompleteType="FirstName"></asp:TextBox>
@@ -44,13 +44,15 @@
                 <div class="col-12">
                     <div class="form-check">
                         <asp:TextBox ID="checkBox" runat="server" CssClass="form-check-input" type="checkbox"></asp:TextBox>
-                        <asp:Label ID="Label6" runat="server" Text="Aceptar los términos y condiciones" 
+                        <asp:Label ID="Label6" runat="server" Text="Aceptar los términos y condiciones"
                             AssociatedControlID="checkBox" CssClass="form-check-label"></asp:Label>
                     </div>
                 </div>
-                <div class="col-12">
-                    <asp:Button ID="btnRegister" runat="server" Text="Registrar" CssClass="btn btn-primary" OnClick="BtnGreeting_Click" />
+                <div class="col-12 ">
+                    <asp:Button ID="btnRegister" runat="server" Text="Registrar" CssClass="btn btn-primary me-2" OnClick="BtnGreeting_Click" />
+                    <a class="btn btn-success" href="/ListPersonDB/">Listar Personas de la DB</a>
                 </div>
+
             </div>
         </div>
     </form>

@@ -119,6 +119,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="ListPersonDB.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -273,6 +274,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ListPersonDB.aspx.cs">
+      <DependentUpon>ListPersonDB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListPersonDB.aspx.designer.cs">
+      <DependentUpon>ListPersonDB.aspx</DependentUpon>
     </Compile>
     <Compile Include="Person.aspx.cs">
       <DependentUpon>Person.aspx</DependentUpon>
