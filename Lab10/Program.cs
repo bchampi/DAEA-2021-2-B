@@ -60,18 +60,31 @@ namespace Lab10
 
 
             // LISTAR PRODUCTOS DISCONTINUADOS
-            string title = "LISTAR PRODUCTOS DISCONTINUADOS";
-            Console.WriteLine(title + "\n==========================================================");
-            query = from p in context.Products where p.Discontinued == true select p;
+            // string title = "LISTAR PRODUCTOS DISCONTINUADOS";
+            // Console.WriteLine(title + "\n==========================================================");
+            // query = from p in context.Products where p.Discontinued == true select p;
 
+
+
+
+            /* ------------------ ACTIVIDAD ADICIONAL ------------------ */
+
+            // LISTAR PRODUCTOS DE LA CATEGORIA 'DAIRY PRODUCTS'
+            // string title = "LISTAR PRODUCTOS DE LA CATEGORIA 'DAIRY PRODUCTS";
+            // Console.WriteLine(title + "\n==========================================================");
+            // query = from p in context.Products where p.Categories.CategoryName == "Dairy Products" select p;
+
+
+            // LISTAR PRODUCTOS DE PROVEDORES DE 'USA'
+            string title = "LISTAR PRODUCTOS DE PROVEDORES DE 'USA'";
+            Console.WriteLine(title + "\n==========================================================");
+            query = from p in context.Products where p.Suppliers.Country == "USA" select p;
 
             foreach (var prod in query)
             {
-                Console.WriteLine("ID={0} \t Price={1} \t Name={2} \t QuantityPerUnit={3} \t Stock={4} \t Discontinued={5}",
-                    prod.ProductID, prod.UnitPrice, prod.ProductName, prod.QuantityPerUnit, prod.UnitsInStock, prod.Discontinued);
+                Console.WriteLine("ID={0} \t Name={1} \t Vendor={2} \t SupplierCountry={3}",
+                    prod.ProductID, prod.ProductName, prod.Suppliers.CompanyName, prod.Suppliers.Country);
             }
-
-
             Console.ReadKey();
         }
 
@@ -107,6 +120,18 @@ namespace Lab10
             var product = (from p in context.Products where p.ProductID == 78
                            select p).FirstOrDefault();
             context.Products.DeleteOnSubmit(product);
+            context.SubmitChanges();
+        }
+
+
+        private static void newCategory()
+        {
+            NorthwndDataContext context = new NorthwndDataContext();
+            Categories c = new Categories();
+            c.CategoryName = "DRINKS PRODUCTS";
+            c.Description = "New drink Product";
+
+            context.Categories.InsertOnSubmit(c);
             context.SubmitChanges();
         }
     }
