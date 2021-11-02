@@ -105,7 +105,7 @@ namespace Lab11_A
                                         };
                             foreach (var product in query)
                             {
-                                Console.WriteLine("PRODUCT ID: {0} PRODUCT NAME: {1} ", product.ProductId, product.ProductName);
+                                Console.WriteLine("PRODUCT ID: {0} \t PRODUCT NAME: {1} ", product.ProductId, product.ProductName);
                             }
                             ReadLine();
                             Clear();
@@ -126,7 +126,7 @@ namespace Lab11_A
                                          };
                             foreach (var smallOrder in query2)
                             {
-                                Console.WriteLine("CONTACT ID: {0} \t LASTNAME: {1} \t FIRSTNAME: {2} \t ORDER ID: {3} \t TOTAL DUE: ${4}",
+                                Console.WriteLine("CONTACT ID: {0}\nLASTNAME: {1}\nFIRSTNAME: {2}\nORDER ID: {3}\nTOTAL DUE: ${4}\n",
                                     smallOrder.ContactID, smallOrder.LastName, smallOrder.FirstName, smallOrder.OrderID, smallOrder.Total);
                             }
                             ReadLine();
@@ -195,7 +195,7 @@ namespace Lab11_A
                                           select product;
                             foreach (var product in query6)
                             {
-                                Console.WriteLine("{0}: {1}\n", product.ProductModelID, product.ProductID);
+                                Console.WriteLine("PRODUCT MODEL ID: {0}\nPRODUCT ID: {1}\n", product.ProductModelID, product.ProductID);
                             }
                             ReadLine();
                             Clear();
