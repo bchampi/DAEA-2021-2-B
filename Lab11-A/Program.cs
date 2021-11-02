@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Objects;
-using System.Globalization;
-using System.Data.EntityClient;
-using System.Data.SqlClient;
-using System.Data.Common;
 
 
 namespace Lab11_A
@@ -18,7 +10,7 @@ namespace Lab11_A
         {
             bool next = true;
             while (next)
-{
+            {
                 Console.WriteLine("\nMENU");
                 Console.WriteLine("============================================================================");
                 Console.WriteLine("1. SINTAXIS EXPRESIONES DE CONSULTAS");
@@ -54,7 +46,6 @@ namespace Lab11_A
                 Console.WriteLine("16. USO DE MAX PARA OBTENER EL MAYOR IMPORTA A PAGAR");
                 Console.WriteLine("============================================================================");
                 Console.WriteLine("0. SALIR\n");
-
                 string menu = Console.ReadLine();
 
                 using (AdventureWorksEntities AWEntities = new AdventureWorksEntities())
@@ -62,7 +53,6 @@ namespace Lab11_A
                     var products = AWEntities.Product;
                     var contacts = AWEntities.Person;
                     var orders = AWEntities.SalesOrderHeader;
-                    Console.Clear();
                     switch (menu)
                     {
                         case "1":
@@ -72,6 +62,7 @@ namespace Lab11_A
                                 Console.WriteLine(product);
                             }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "2":
@@ -81,6 +72,7 @@ namespace Lab11_A
                                 Console.WriteLine(product);
                             }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "3":
@@ -91,6 +83,7 @@ namespace Lab11_A
                                 Console.WriteLine(product.Name);
                             }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "4":
@@ -100,106 +93,192 @@ namespace Lab11_A
                                 Console.WriteLine(product.Name);
                             }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "5":
                             var query = from product in AWEntities.Product
-                                            select new
-                                            {
-                                                ProductId = product.ProductID,
-                                                ProductName = product.Name
-                                            };
+                                        select new
+                                        {
+                                            ProductId = product.ProductID,
+                                            ProductName = product.Name
+                                        };
                             foreach (var product in query)
                             {
-                                Console.WriteLine("Product Id: {0} Product Name: {1} ", product.ProductId, product.ProductName);
+                                Console.WriteLine("PRODUCT ID: {0} PRODUCT NAME: {1} ", product.ProductId, product.ProductName);
                             }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "6":
                             var query2 = from contact in contacts
-                                    from order in orders
-                                    where contact.BusinessEntityID == order.SalesPerson.BusinessEntityID && 
-                                    order.TotalDue < 500.00M 
-                                    select new 
-                                    { 
-                                        ContactID = contact.BusinessEntityID,
-                                        LastName = contact.LastName,
-                                        FirstName = contact.FirstName,
-                                        OrderID = order.SalesOrderID,
-                                        Total =  order.OrderDate
-                                    };
+                                         from order in orders
+                                         where contact.BusinessEntityID == order.SalesPerson.BusinessEntityID &&
+                                         order.TotalDue < 500.00M
+                                         select new
+                                         {
+                                             ContactID = contact.BusinessEntityID,
+                                             LastName = contact.LastName,
+                                             FirstName = contact.FirstName,
+                                             OrderID = order.SalesOrderID,
+                                             Total = order.OrderDate
+                                         };
                             foreach (var smallOrder in query2)
                             {
-                                Console.WriteLine("ContactId: {0} \t LastName: {1} \t FirstName: {2} \t OrderId: {3} \t TotalDue: ${4}", 
+                                Console.WriteLine("CONTACT ID: {0} \t LASTNAME: {1} \t FIRSTNAME: {2} \t ORDER ID: {3} \t TOTAL DUE: ${4}",
                                     smallOrder.ContactID, smallOrder.LastName, smallOrder.FirstName, smallOrder.OrderID, smallOrder.Total);
                             }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "7":
                             var query3 = from contact in contacts
-                                     from order in orders
-                                     where contact.BusinessEntityID == order.SalesPerson.BusinessEntityID &&
-                                     order.OrderDate >= new DateTime(2002, 10, 1)
-                                     select new {
-                                         ContactID = contact.BusinessEntityID,
-                                         LastName = contact.LastName,
-                                         FirstName = contact.FirstName,
-                                         OrderID = order.SalesOrderID,
-                                         OrderDate = order.OrderDate
-                                     };
+                                         from order in orders
+                                         where contact.BusinessEntityID == order.SalesPerson.BusinessEntityID &&
+                                         order.OrderDate >= new DateTime(2002, 10, 1)
+                                         select new {
+                                             ContactID = contact.BusinessEntityID,
+                                             LastName = contact.LastName,
+                                             FirstName = contact.FirstName,
+                                             OrderID = order.SalesOrderID,
+                                             OrderDate = order.OrderDate
+                                         };
                             foreach (var order in query3)
                             {
-                                Console.WriteLine("ContactId: {0} \t LastName: {1} \t FirstName: {2} \t OrderId: {3} \t OrderDate: ${4}",
+                                Console.WriteLine("CONTACT ID: {0} \t LASTNAME: {1} \t FIRSTNAME: {2} \t ORDER ID: {3} \t ORDER DATE: ${4}",
                                     order.ContactID, order.LastName, order.FirstName, order.OrderID, order.OrderDate);
                             }
                             ReadLine();
                             break;
 
                         case "8":
-                            //statement 
+                            var query4 = from order in AWEntities.SalesOrderDetail
+                                         where order.OrderQty > 2 && order.OrderQty < 6
+                                         select new
+                                         {
+                                             SalesOrderID = order.SalesOrderID,
+                                             orderQty = order.OrderQty
+                                         };
+                            foreach (var order in query4)
+                            {
+                                Console.WriteLine("ORDER ID: {0} \t ORDER QUANTITY: {1}",
+                                    order.SalesOrderID, order.orderQty);
+                            }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "9":
-                            //statement 
+                            var query5 = from product in products
+                                         where product.Color == "Red"
+                                         select new
+                                         {
+                                             Name = product.Name,
+                                             ProductNumber = product.ProductNumber,
+                                             ListPrice = product.ListPrice
+                                         };
+                            foreach (var product in query5)
+                            {
+                                Console.WriteLine("NAME: {0}\nPRODUCT NUMBER: {1}\nLIST PRICE: ${2}\n",
+                                    product.Name, product.ProductNumber, product.ListPrice);
+                            }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "10":
-                            //statement 
+                            int?[] productsModelIds = { 19, 26, 118 };
+                            var query6 = from product in products
+                                          where productsModelIds.Contains(product.ProductModelID)
+                                          select product;
+                            foreach (var product in query6)
+                            {
+                                Console.WriteLine("{0}: {1}\n", product.ProductModelID, product.ProductID);
+                            }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "11":
-                            //statement 
+                            IQueryable<Person> sortedNames = from n in contacts orderby n.LastName select n;
+                            foreach (Person n in sortedNames)
+                            {
+                                Console.WriteLine(n.LastName);
+                            }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "12":
-                            //statement 
+                            IQueryable<decimal> sortedPrices = from p in products 
+                                                               orderby p.ListPrice descending select p.ListPrice;
+                            foreach (decimal price in sortedPrices)
+                            {
+                                Console.WriteLine(price);
+                            }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "13":
-                            //statement 
+                            IQueryable<Person> sortedContacts = from contact in contacts 
+                                                                orderby contact.LastName, contact.FirstName select contact;
+                            foreach (Person contact in sortedContacts)
+                            {
+                                Console.WriteLine(contact.LastName + ", " + contact.FirstName);
+                            }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "14":
-                            //statement 
+                            var query7 = from product in products
+                                         group product by product.Style into g
+                                         select new
+                                         {
+                                             Style = g.Key,
+                                             AverageListPrice = g.Average(product => product.ListPrice)
+                                         };
+                            foreach (var product in query7)
+                            {
+                                Console.WriteLine("ESTILO: {0}\nPRECIO PROMEDIO: {1}\n", product.Style, product.AverageListPrice);
+                            }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "15":
-                            //statement 
+                            var query8 = from product in products
+                                         group product by product.Color into g
+                                         select new
+                                         {
+                                             Color = g.Key,
+                                             ProductCount = g.Count()
+                                         };
+                            foreach (var product in query8)
+                            {
+                                Console.WriteLine("COLOR: {0}\nCANTIDAD: {1}\n", product.Color, product.ProductCount);
+                            }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "16":
-                            //statement 
+                            var query9 = from order in orders
+                                         group order by order.SalesPersonID into g
+                                         select new
+                                         {
+                                             Category = g.Key,
+                                             MaxTotalDue= g.Max(order => order.TotalDue)
+                                         };
+                            foreach (var order in query9)
+                            {
+                                Console.WriteLine("CONTACT ID: {0}\nTOTAL DUE MAX: {1}\n", order.Category, order.MaxTotalDue);
+                            }
                             ReadLine();
+                            Clear();
                             break;
 
                         case "0":
@@ -212,5 +291,6 @@ namespace Lab11_A
 
         }
         private static void ReadLine() { Console.ReadLine(); }
+        private static void Clear() { Console.Clear(); }
     }
 }
