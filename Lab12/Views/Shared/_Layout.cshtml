@@ -4,23 +4,60 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-        </div>
-    </nav>
+    <div class="container">
+        <div class="row">
+            <main class="container">
+                <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark pl-0 pr-2 pb-0">
+                    <div class="container-fluid px-0">
+                        <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+                            <!-- Navbar links -->
+                            <ul class="navbar-nav align-items-center">
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link pt-1 px-0" href="/Person/Index/" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <div class="media d-flex align-items-center">
+                                            <div class="media-body ml-2 text-dark align-items-center d-none d-lg-block">
+                                                <h3 class="m-auto">Laboratorio 12</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h2 class="h4 mb-0">Personas</h2>
+                            </div>
+                            <div class="card-body">
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
+    <footer class="footer section py-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                    <p class="mb-0 text-center text-xl-left">
+                        &copy; @DateTime.Now.Year - My ASP.NET Application
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>

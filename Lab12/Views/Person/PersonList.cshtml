@@ -4,30 +4,31 @@
     ViewBag.Title = "Listar";
 }
 
-<h2>Listado de Personas</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Persona ID<th>
-            <th>Nombre<th>
-            <th>Apellido<th>
-            <th>Fecha Nac.<th>
-            <th>Dirección<th>
-            <th>Correo<th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var person in Model)
-        {
+<div class="table-responsive">
+    <table class="table table-centered table-nowrap mb-0 rounded">
+        <thead class="thead-light">
             <tr>
-                <th>@person.PersonID<th>
-                <th>@person.FirstName<th>
-                <th>@person.LastName<th>
-                <th>@person.DateOfBirth<th>
-                <th>@person.Address<th>
-                <th>@person.Email<th>
+                <th class="border-0">Persona ID<th>
+                <th class="border-0">Nombre<th>
+                <th class="border-0">Apellido<th>
+                <th class="border-0">Fecha Nac.<th>
+                <th class="border-0">Dirección<th>
+                <th class="border-0">Correo<th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var person in Model)
+            {
+                <tr>
+                    <th class="border-0">@person.PersonID<th>
+                    <th class="border-0"><span class="h6">@person.FirstName</span><th>
+                    <th class="border-0">@person.LastName<th>
+                    <th class="border-0">@person.DateOfBirth<th>
+                    <th class="border-0">@person.Address<th>
+                    <th class="border-0">@person.Email<th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
