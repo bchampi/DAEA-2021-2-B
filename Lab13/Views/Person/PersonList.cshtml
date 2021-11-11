@@ -1,0 +1,30 @@
+﻿
+@model List<Lab13.Models.Person>
+
+@{
+    ViewBag.Title = "Listar";
+    var grid = new WebGrid(source: Model, columnNames: new[] {
+        "PersonID", "FirstName", "LastName", "DateOfBirth", "Address", "Email"
+    });
+}
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="h4 mb-0">Listado de Personas</h2>
+    </div>
+    <div class="card-body">
+        @grid.GetHtml(tableStyle: "table table-centered table-nowrap mb-0 rounded", headerStyle: "thead-light", 
+            columns: grid.Columns(
+                grid.Column(style: "border-0", columnName: "PersonID", header: "ID PERSONA"),
+                grid.Column(style: "border-0", columnName: "FirstName", header: "NOMBRE"),
+                grid.Column(style: "border-0", columnName: "LastName", header: "APELLIDO"),
+                grid.Column(style: "border-0", columnName: "DateOfBirth", header: "FECHA DE NACIMIENTO"),
+                grid.Column(style: "border-0", columnName: "Address", header: "DIRECCIÓN"),
+                grid.Column(style: "border-0", columnName: "Email", header: "CORREO ELECTRÓNICO"),
+                grid.Column(style: "border-0", header: "Acciones", format: (item) =>
+                             Html.ActionLink("Ver", "PersonShow", "Person", new { id = item.PersonID }, null))
+            )
+        )
+    </div>
+</div>
+
