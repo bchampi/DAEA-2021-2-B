@@ -41834,7 +41834,8 @@ label {
 
 .table .thead-light th {
     background-color: #f5f8fb;
-    color: #262b40
+    color: #262b40;
+    border: 0;
 }
 
     .table .thead-light th a {

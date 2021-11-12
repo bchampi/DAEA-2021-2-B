@@ -1,0 +1,47 @@
+﻿@model List<Lab13.Models.Person>
+
+@{
+    var grid = new WebGrid(source: Model, columnNames: new[] {
+        "PersonID", "FirstName", "LastName", "DateOfBirth", "Address", "Email"
+    });
+}
+
+<table class="table table-centered table-nowrap mb-0 rounded">
+    <thead class="thead-light">
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>APELLIDOS</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>DIRECCIÓN</th>
+            <th>CORREO ELECTRÓNICO</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() != 0)
+        {
+            foreach (var person in Model)
+            {
+                <tr>
+                    <td class="border-0">@person.PersonID</td>
+                    <td class="border-0">@person.FirstName</td>
+                    <td class="border-0">@person.LastName</td>
+                    <td class="border-0">@person.DateOfBirth</td>
+                    <td class="border-0">@person.Address</td>
+                    <td class="border-0">@person.Email</td>
+                    <td class="border-0">@Html.ActionLink("Ver", "PersonShow", "Person", new
+                            { @class = "btn btn-sm btn-tertiary",
+                              @href = "/Person/PersonShow/" + person.PersonID })
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7" class="border-0"><strong class="d-flex justify-content-center">No hay datos que coincidan con el filtro</strong></td>
+            </tr>
+        }
+    </tbody>
+</table>
