@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Lab14.Categories>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="h4 mb-0">Listado de Categorias</h2>
+        @* <div class="input-group input-group-merge search-bar w-auto">
+            <span class="input-group-text" id="topbar-addon"><span class="fas fa-search"></span></span>
+            <input type="text" class="form-control" id="search" placeholder="Buscar" aria-label="Search" aria-describedby="topbar-addon" autocomplete="off" />
+        </div>
+        *@
+        <a href="/Categories/Create/" class="btn btn-blue">Crear Categoria</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-centered table-nowrap mb-0 rounded">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>DESCRIPCIÓN</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="border-0">@item.CategoryID</td>
+                        <td class="border-0">@item.CategoryName</td>
+                        <td class="border-0">@item.Description</td>
+                        <td class="border-0">
+                            @Html.ActionLink("Ver", "PersonShow", "Person", new
+                            {
+                                @class = "btn btn-sm btn-tertiary",
+                                @href = "/Person/PersonShow/" + item.CategoryID
+                            })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+</table>
