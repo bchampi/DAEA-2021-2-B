@@ -116,6 +116,7 @@
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="CustomerDemographics.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
@@ -182,8 +183,10 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
-    <Content Include="Views\Categories\Details.cshtml" />
     <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
