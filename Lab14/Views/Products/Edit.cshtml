@@ -1,0 +1,86 @@
+﻿@model Lab14.Products
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="col-12 d-flex justify-content-center">
+    <div class="row col-8">
+        <div class="card">
+            <div class="card-body bg-white border-light shadow-sm">
+                <h2 class="h5 mb-4">Editar Producto</h2>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row mt-1 mb-1">
+                        @Html.ValidationSummary(true)
+                        @Html.HiddenFor(model => model.ProductID)
+                        <div class="col-md-6 mb-3">
+                            <label for="name">Nombre</label>
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control", @id = "name" } })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="supplier">Proveedor</label>
+                            <div class="input-group">
+                                @Html.DropDownList("SupplierID", null, htmlAttributes: new { @class = "form-select form-control", @id = "supplier" })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.SupplierID, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="category">Categoría</label>
+                            <div class="input-group">
+                                @Html.DropDownList("CategoryID", null, htmlAttributes: new { @class = "form-select form-control", @id = "category" })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="quantity">Cantidad</label>
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.QuantityPerUnit, new { htmlAttributes = new { @class = "form-control", @id = "quantity" } })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.QuantityPerUnit, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="price">Precio</label>
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.UnitPrice, new { htmlAttributes = new { @class = "form-control", @id = "price" } })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.UnitPrice, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="stock">Stock</label>
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.UnitsInStock, new { htmlAttributes = new { @class = "form-control", @type = "number", @id = "stock" } })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.UnitsInStock, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="order">Orden</label>
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.UnitsOnOrder, new { htmlAttributes = new { @class = "form-control", @type = "number", @id = "order" } })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.UnitsOnOrder, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="level">Nivel de Inventario</label>
+                            <div class="input-group">
+                                @Html.EditorFor(model => model.ReorderLevel, new { htmlAttributes = new { @class = "form-control", @type = "number", @id = "level" } })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.SupplierID, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="discontinued mr-2">Aplazado</label>
+                            @Html.EditorFor(model => model.Discontinued, new { htmlAttributes = new { @class = "form-check-input ml-2", @id = "discontinued" } })
+                            @Html.ValidationMessageFor(model => model.Discontinued, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-warning"><i class="fas fa-edit"></i> Actualizar</button>
+                    <a href="/Products/" class="btn btn-black"><i class="fas fa-times-circle"></i> Regresar</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

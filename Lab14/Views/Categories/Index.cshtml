@@ -30,9 +30,12 @@
                             <td class="border-0">@item.CategoryName</td>
                             <td class="border-0">@item.Description</td>
                             <td class="border-0 text-center">
-                                <a href="/Products/Details/@item.CategoryID" class="btn btn-sm btn-tertiary" title="Productos"><i class="fas fa-box-open"></i></a>
-                                <a href="/Categories/Edit/@item.CategoryID" class="btn btn-sm btn-warning" title="Editar"><i class="fas fa-edit"></i></a>
-                                <a href="/Categories/Delete/@item.CategoryID" class="btn btn-sm btn-danger" title="Eliminar"><i class="fas fa-trash"></i></a>
+                                <a href="/Products/ByCategory/@item.CategoryID" class="btn btn-sm btn-tertiary" 
+                                   title="Productos"><i class="fas fa-box-open"></i></a>
+                                <a href="/Categories/Edit/@item.CategoryID" class="btn btn-sm btn-warning" 
+                                   title="Editar"><i class="fas fa-edit"></i></a>
+                                <a href="/Categories/Delete/@item.CategoryID" class="btn btn-sm btn-danger" 
+                                   title="Eliminar"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     }
@@ -40,7 +43,7 @@
                 else
                 {
                     <tr>
-                        <td colspan="3" class="border-0"><strong class="d-flex justify-content-center">No hay categorias registradas. Cree una</strong></td>
+                        <td colspan="3" class="border-0"><strong class="d-flex justify-content-center">No hay categorias registradas, agregue una.</strong></td>
                     </tr>
                 }
             </tbody>

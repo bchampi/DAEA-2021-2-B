@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Lab14.Products>
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Category";
     var count = 1;
 }
 
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <h2 class="h4 mb-0">Listado de Productos <span class="text-tertiary">@(Model.Count() != 0 ? Model.First().Categories.CategoryName : "")</span></h2>
+        <h2 class="h4 mb-0">Productos de la categoría <span class="text-tertiary">@(Model.Count() != 0 ? Model.First().Categories.CategoryName : "")</span></h2>
         <a href="/Products/Create/" class="btn btn-tertiary">Crear Producto <i class="fas fa-plus-circle"></i></a>
     </div>
     <div class="card-body">
@@ -20,9 +20,9 @@
                     <th>CANTIDAD</th>
                     <th>PRECIO</th>
                     <th>STOCK</th>
-                    <th>PEDIDO</th>
+                    <th>ORDEN</th>
                     <th>NIVEL</th>
-                    <th>SUSPENDIDO</th>
+                    <th>APLAZADO</th>
                     <th class="text-center">ACCIONES</th>
                 </tr>
             </thead>
@@ -34,16 +34,21 @@
                         <tr>
                             <td class="border-0">@(count ++)</td>
                             <td class="border-0">@item.ProductName</td>
-                            <td class="border-0">@item.Suppliers.ContactName</td>
+                            <td class="border-0">@item.Suppliers.CompanyName</td>
                             <td class="border-0">@item.QuantityPerUnit</td>
                             <td class="border-0">@item.UnitPrice</td>
                             <td class="border-0">@item.UnitsInStock</td>
                             <td class="border-0">@item.UnitsOnOrder</td>
                             <td class="border-0">@item.ReorderLevel</td>
-                            <td class="border-0">@(item.Discontinued == false ? "NO" : "SI")</td>
+                            <td class="border-0">
+                                <input @(item.Discontinued == false ? "" : checked("checked"))
+                                       class="form-check-input" disabled="disabled" type="checkbox">
+                            </td>
                             <td class="border-0 text-center">
-                                <a href="/Products/Edit/@item.CategoryID" class="btn btn-sm btn-warning" title="Editar"><i class="fas fa-edit"></i></a>
-                                <a href="/Products/Delete/@item.CategoryID" class="btn btn-sm btn-danger" title="Eliminar"><i class="fas fa-trash"></i></a>
+                                <a href="/Products/Edit/@item.ProductID" class="btn btn-sm btn-warning" 
+                                   title="Editar"><i class="fas fa-edit"></i></a>
+                                <a href="/Products/Delete/@item.ProductID" class="btn btn-sm btn-danger" 
+                                   title="Eliminar"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     }
