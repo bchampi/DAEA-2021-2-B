@@ -7,16 +7,23 @@
 
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <h2 class="h4 mb-0">Listado de Productos</h2>
+        @if (Model.Count() == 0) { <h2 class="h4 mb-0">Categoría sin productos</h2> }
+        else
+        {
+            <h2 class="h4 mb-0">Productos <span class="text-tertiary">de la categoría @Model.First().Categories.CategoryName</span></h2>
+        }
         <div class="d-flex">
-            <div class="input-group input-group-merge search-bar w-auto mr-4">
-                <span class="input-group-text" id="topbar-addon"><span class="fas fa-search"></span></span>
-                <input type="text" class="form-control" id="search" placeholder="Filtrar por Categoria" aria-label="Search" aria-describedby="topbar-addon" autocomplete="off" />
-            </div>
+            @using (Html.BeginForm("Index", "Products", FormMethod.Get, new { @Id = "WebGridForm" }))
+            {
+                <div class="input-group input-group-merge search-bar w-auto mr-4">
+                    <input type="text" class="form-control" id="search" name="search" placeholder="Buscar por categoría" aria-label="Search" autocomplete="off" />
+                    <button class="btn btn-gray" type="submit"><span class="fas fa-search"></span></button>
+                </div>
+            }
             <a href="/Products/Create/" class="btn btn-tertiary">Crear Producto <i class="fas fa-plus-circle"></i></a>
         </div>
     </div>
-    <div class="card-body">
+    <div class="card-body" id="grdProducts">
         <table class="table table-centered table-nowrap mb-0 rounded">
             <thead class="thead-light">
                 <tr>
@@ -46,12 +53,14 @@
                             <td class="border-0">@item.UnitsInStock</td>
                             <td class="border-0">@item.UnitsOnOrder</td>
                             <td class="border-0">@item.ReorderLevel</td>
-                            <td class="border-0"><input @(item.Discontinued == false ? "" : checked("checked")) 
-                                                        class="form-check-input" disabled="disabled" type="checkbox"></td>
+                            <td class="border-0">
+                                <input @(item.Discontinued == false ? "" : checked("checked"))
+                                       class="form-check-input" disabled="disabled" type="checkbox">
+                            </td>
                             <td class="border-0 text-center">
-                                <a href="/Products/Edit/@item.ProductID" class="btn btn-sm btn-warning" 
+                                <a href="/Products/Edit/@item.ProductID" class="btn btn-sm btn-warning"
                                    title="Editar"><i class="fas fa-edit"></i></a>
-                                <a href="/Products/Delete/@item.ProductID" class="btn btn-sm btn-danger" 
+                                <a href="/Products/Delete/@item.ProductID" class="btn btn-sm btn-danger"
                                    title="Eliminar"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
@@ -65,5 +74,6 @@
                 }
             </tbody>
         </table>
+
     </div>
 </div>

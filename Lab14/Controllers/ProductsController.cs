@@ -17,7 +17,17 @@ namespace Lab14.Controllers
         // GET: Products1
         public ActionResult Index()
         {
+            List<Products> products = db.Products.Include(p => p.Categories).Include(p => p.Suppliers).ToList();
+            return View(products);
+        }
+
+        [HttpGet]
+        public ActionResult Index(string search)
+        {
             var products = db.Products.Include(p => p.Categories).Include(p => p.Suppliers);
+            if (!String.IsNullOrEmpty(search))
+                products = products.Where(p => p.Categories.CategoryName.Contains(search.ToLower()));
+            
             return View(products.ToList());
         }
 
