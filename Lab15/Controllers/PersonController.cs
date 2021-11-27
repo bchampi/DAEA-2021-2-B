@@ -39,7 +39,7 @@ namespace Lab15.Controllers
 
         public ActionResult Report()
         {
-            //  _ = new List<Person>();
+            _ = new List<Person>();
             List<Person> list = Context.Person.ToList();
 
             var rptViewer = new ReportViewer();
@@ -55,12 +55,11 @@ namespace Lab15.Controllers
         }
 
         [HttpPost]
-        public ActionResult Report(string firstName)
+        public ActionResult Report(string search)
         {
             List<Person> list = new List<Person>();
-            // List<Person> list = Context.Person.ToList();
             list = (from p in Context.Person
-                    where p.FirstName.Contains(firstName)
+                    where p.FirstName.Contains(search.ToUpper())
                     select p).ToList();
             var rptViewer = new ReportViewer();
             rptViewer.ProcessingMode = ProcessingMode.Local;
