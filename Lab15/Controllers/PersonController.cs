@@ -9,7 +9,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
-
+using System.Collections;
 
 namespace Lab15.Controllers
 {
@@ -71,6 +71,79 @@ namespace Lab15.Controllers
 
             ViewBag.ReportViewer = rptViewer;
             return View();
+        }
+
+        public ActionResult Graphic()
+        {
+            return View();
+        }
+
+        public ActionResult GraphicColumn()
+        {
+            ArrayList x = new ArrayList();
+            ArrayList y = new ArrayList();
+
+            var query = (from c in Context.Course select c);
+            query.ToList().ForEach(r => x.Add(r.Title));
+            query.ToList().ForEach(r => y.Add(r.Credits));
+            
+            new Chart(width: 600, height: 400, theme: ChartTheme.Green)
+                .AddTitle("Gráfico de Columnas")
+                .AddSeries("Default", chartType: "Column", xValue: x, yValues: y)
+                .Write("bmp");
+
+            return null;
+        }
+
+        public ActionResult GraphicBar()
+        {
+            ArrayList x = new ArrayList();
+            ArrayList y = new ArrayList();
+
+            var query = (from c in Context.Course select c);
+            query.ToList().ForEach(r => x.Add(r.Title));
+            query.ToList().ForEach(r => y.Add(r.Credits));
+
+            new Chart(width: 600, height: 400, theme: ChartTheme.Vanilla3D)
+                .AddTitle("Gráfico de Barras")
+                .AddSeries("Default", chartType: "Bar", xValue: x, yValues: y)
+                .Write("bmp");
+
+            return null;
+        }
+
+        public ActionResult GraphicPie()
+        {
+            ArrayList x = new ArrayList();
+            ArrayList y = new ArrayList();
+
+            var query = (from c in Context.Course select c);
+            query.ToList().ForEach(r => x.Add(r.Title));
+            query.ToList().ForEach(r => y.Add(r.Credits));
+
+            new Chart(width: 600, height: 400, theme: ChartTheme.Blue)
+                .AddTitle("Gráfico PIE")
+                .AddSeries("Default", chartType: "Pie", xValue: x, yValues: y)
+                .Write("bmp");
+
+            return null;
+        }
+
+        public ActionResult GraphicRadar()
+        {
+            ArrayList x = new ArrayList();
+            ArrayList y = new ArrayList();
+
+            var query = (from c in Context.Course select c);
+            query.ToList().ForEach(r => x.Add(r.Title));
+            query.ToList().ForEach(r => y.Add(r.Credits));
+
+            new Chart(width: 600, height: 400, theme: ChartTheme.Yellow)
+                .AddTitle("Gráfico de Radar")
+                .AddSeries("Default", chartType: "Radar", xValue: x, yValues: y)
+                .Write("bmp");
+
+            return null;
         }
     }
 }
