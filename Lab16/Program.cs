@@ -1,13 +1,20 @@
 using persons.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Lab16.Data;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<Lab16Context>(options =>
+
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Lab16Context")));
+
 // Add services to the container.
-builder.Services.AddDbContext<PersonContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("PersonDb")
-));
+// builder.Services.AddDbContext<PersonContext>(options => options.UseSqlServer(
+//    builder.Configuration.GetConnectionString("PersonDb")
+//));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
